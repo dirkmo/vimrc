@@ -13,6 +13,8 @@ Plugin 'https://github.com/scrooloose/nerdtree'
 Plugin 'ctrlp.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'EasyMotion'
+Plugin 'tagbar'
+Plugin 'mhinz/vim-signify'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,8 +34,13 @@ set sidescroll=8
 set nowrap
 set cursorline "highlight current line
 set hlsearch
+set hidden "Change buffer despite modified buffer
+set exrc "use additional local .vimrc file
+set mouse=a
 
 let mapleader=" "
+
+let g:signify_vcs_list = [ 'svn', 'git' ]
 
 " <Space>-n Relative numbering ein/aus
 nnoremap <Leader>n :call NumberToggle()<cr>
@@ -41,13 +48,11 @@ nnoremap <Leader>n :call NumberToggle()<cr>
 nnoremap <Leader>t :NERDTreeToggle<cr>
 " <Space>-b BufExplorer
 nnoremap <Leader>e :BufExplorer<cr>
+" <Space>-c Tagbar
+nnoremap <Leader>c :TagbarOpenAutoClose<cr>
 
 " <Space>-w, b, f, F: Easymotion Word jumps, find jumps
 "let g:EasyMotion_leader_key = '<Leader>'
-nmap <Leader>f <Leader><leader>f
-nmap <Leader>F <Leader><leader>F
-nmap <Leader>w <Leader><leader>w
-nmap <Leader>b <Leader><leader>b
 
 " relative numbering on/off
 function! NumberToggle()
