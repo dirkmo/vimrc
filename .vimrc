@@ -22,10 +22,12 @@ filetype plugin indent on    " required
 
 "---------------------------------------------------------------
 
-color desert
-set gfn=Monospace\ 11
+"color desert
+color moriarty
+set gfn=Monospace\ 10
 set tabstop=4
 set shiftwidth=4
+set expandtab
 set laststatus=2
 set number
 set relativenumber
@@ -67,6 +69,7 @@ endfunc
 autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
+:command MD2html :!pandoc -s % -o %:r.html
 
 " Tipps und Tricks
 
