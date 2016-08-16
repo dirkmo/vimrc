@@ -15,6 +15,8 @@ Plugin 'bufexplorer.zip'
 Plugin 'EasyMotion'
 Plugin 'tagbar'
 Plugin 'mhinz/vim-signify'
+Plugin 'vim-airline/vim-airline'
+Plugin 'junegunn/vim-easy-align'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -24,7 +26,8 @@ filetype plugin indent on    " required
 
 "color desert
 color moriarty
-set gfn=Monospace\ 10
+"set gfn=Monospace\ 10
+set gfn=Droid\ Sans\ Mono\ 10
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -53,6 +56,11 @@ nnoremap <Leader>e :BufExplorer<cr>
 " <Space>-c Tagbar
 nnoremap <Leader>c :TagbarOpenAutoClose<cr>
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
 " <Space>-w, b, f, F: Easymotion Word jumps, find jumps
 "let g:EasyMotion_leader_key = '<Leader>'
 
@@ -70,18 +78,3 @@ autocmd InsertEnter * :set norelativenumber
 autocmd InsertLeave * :set relativenumber
 
 :command MD2html :!pandoc -s % -o %:r.html
-
-" Tipps und Tricks
-
-" case insensitive search:
-"     /\challo      \c macht ganzen String insensitive 
-"     oder :set ignorecase (ic)
-
-" howto remap CAPS (keycode 66) to CTRL (keycode 37):
-" xmodmap -e "clear lock"
-" for CAPS as Control key:
-" xmodmap -e "keycode 66 = Control_L"
-" xmodmap -e "add Control = Control_L Control_R"
-" for CAPS as Escape key:
-" xmodmap -e "keycode 66 = Escape"
-
