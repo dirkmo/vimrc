@@ -1,8 +1,10 @@
+"git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/vim
+set rtp+=~/.config/vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -17,6 +19,7 @@ Plugin 'tagbar'
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-airline/vim-airline'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -26,8 +29,8 @@ filetype plugin indent on    " required
 
 "color desert
 color moriarty
-"set gfn=Monospace\ 10
-set gfn=Droid\ Sans\ Mono\ 10
+set gfn=Monospace\ 10
+"set gfn=Droid\ Sans\ Mono\ 10
 set tabstop=4
 set shiftwidth=4
 set expandtab
@@ -42,6 +45,7 @@ set hlsearch
 set hidden "Change buffer despite modified buffer
 set exrc "use additional local .vimrc file
 set mouse=a
+syn on
 
 let mapleader=" "
 
