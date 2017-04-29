@@ -2,7 +2,7 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/vimrc/bundle/Vundle.vim,~/.config/vimrc
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -17,6 +17,8 @@ Plugin 'tagbar'
 Plugin 'mhinz/vim-signify'
 Plugin 'vim-airline/vim-airline'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'racer-rust/vim-racer'
+Plugin 'rust-lang/rust.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -24,24 +26,31 @@ filetype plugin indent on    " required
 
 "---------------------------------------------------------------
 
+"color smyck
 "color desert
 color moriarty
-"set gfn=Monospace\ 10
-set gfn=Droid\ Sans\ Mono\ 10
+set gfn=Menlo\ Regular:h15
+"set gfn=Droid\ Sans\ Mono\ 12
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set laststatus=2
 set number
-set relativenumber
+"set relativenumber
 set incsearch
 set sidescroll=8
-set nowrap
+"set nowrap
+set breakindent "line wrap with indentation
+set breakindentopt=min:20,shift:4,sbr
+set sbr=>>>\ 
 set cursorline "highlight current line
 set hlsearch
 set hidden "Change buffer despite modified buffer
 set exrc "use additional local .vimrc file
-set mouse=a
+"set mouse=a
+syntax on
+
+imap jk <Esc>
 
 let mapleader=" "
 
@@ -74,7 +83,5 @@ function! NumberToggle()
 endfunc
 
 " relative numbering automatisch im Command Modus
-autocmd InsertEnter * :set norelativenumber
-autocmd InsertLeave * :set relativenumber
-
-:command MD2html :!pandoc -s % -o %:r.html
+"autocmd InsertEnter * :set norelativenumber
+"autocmd InsertLeave * :set relativenumber
