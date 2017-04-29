@@ -3,6 +3,9 @@ filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.config/vimrc/bundle/Vundle.vim,~/.config/vimrc
+set rtp+=~/.config/vim
+set rtp+=~/.config/vim/bundle/Vundle.vim
+
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
@@ -31,6 +34,7 @@ filetype plugin indent on    " required
 color moriarty
 set gfn=Menlo\ Regular:h15
 "set gfn=Droid\ Sans\ Mono\ 12
+"set gfn=Monospace\ 10
 set tabstop=4
 set shiftwidth=4
 set expandtab
